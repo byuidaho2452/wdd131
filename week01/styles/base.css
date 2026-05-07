@@ -70,7 +70,13 @@ header {
 /* --- DESKTOP ADJUSTMENTS --- */
 @media (min-width: 600px) {
     .header-spacer {
-        height: 100px; 
+        height: 140px; 
+    }
+}
+
+@media (min-width: 900px) {
+    .header-spacer {
+        height: 120px;
     }
 }
 
@@ -113,7 +119,7 @@ header {
 main {
     flex: 1;
     max-width: 1200px;
-    margin-top: 400px; 
+    margin: 0 auto;
     padding: 20px;
 }
 
