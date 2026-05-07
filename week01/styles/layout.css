@@ -1,0 +1,146 @@
+/* --- UNIVERSAL RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Update your existing body tag */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    
+    /* These three lines ensure the footer stays at the bottom */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Stands for 100% of the Viewport Height */
+}
+
+/* This tells the main content area to grow and take up 
+   all available space, pushing the footer down. */
+.grid-container {
+    flex: 1; 
+}
+
+/* --- HEADER SETTINGS --- */
+header {
+    /* This makes the header stay at the top of the screen */
+    position: fixed; 
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Keeps it above everything else */
+    background-color: #333;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    gap: 15px; /* Space between photo and text */
+}
+
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Makes it a circle */
+    object-fit: cover;
+    border: 2px solid #fff;
+}
+
+/* --- THE SPACER --- */
+/* Because the header is 'fixed', it floats above the page. 
+   We need this spacer so our main content doesn't start underneath it. */
+.header-spacer {
+    height: 140px; /* Adjust this to match your header's height */
+}
+
+/* --- NAVIGATION MENU --- */
+.navigation {
+    display: flex;
+    flex-direction: column; /* Mobile style: Stacked links */
+    list-style: none;
+    background-color: #000;
+}
+
+.navigation li a {
+    display: block;
+    padding: 12px;
+    color: #fff;
+    text-decoration: none;
+    /* text-align: center; */
+    border-top: 1px solid #222;
+}
+
+/* --- DESKTOP ADJUSTMENTS (Wider than 600px) --- */
+@media (min-width: 600px) {
+    .navigation {
+        flex-direction: row; /* Horizontal for computer screens */
+        justify-content: center;
+    }
+
+    .navigation li a {
+        border-top: none;
+        padding: 15px 30px;
+    }
+    
+    .header-spacer {
+        height: 120px; /* Header is usually shorter on desktop */
+    }
+}
+
+
+
+
+
+/* --- THE GRID WRAPPER --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* On mobile, everything takes 100% width */
+    gap: 20px; /* Space between the main and aside boxes */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the whole container on big screens */
+}
+
+/* --- BOX STYLING --- */
+.content-box {
+    background-color: #d3d3d3; /* Light grey like your screenshot */
+    padding: 2rem;
+    min-height: 300px;
+}
+
+.sidebar-box {
+    background-color: #fff; /* White like your screenshot */
+    padding: 2rem;
+    border: 1px solid #ddd;
+}
+
+/* --- DESKTOP GRID (The 'Holy Grail' look) --- */
+@media (min-width: 768px) {
+    .grid-container {
+        /* This creates two columns: 
+           The Main takes 3 parts of space, the Aside takes 1 part. */
+        grid-template-columns: 3fr 1fr; 
+    }
+}
+
+
+
+
+/* --- FOOTER STYLING --- */
+footer {
+    background-color: #222; /* Matches the header color */
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 20px; /* Pushes away from the content boxes */
+}
+
+footer p {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
