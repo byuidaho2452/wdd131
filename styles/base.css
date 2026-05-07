@@ -15,12 +15,6 @@ body {
     min-height: 100vh;
 }
 
-/* This tells the main content area to grow and take up 
-   all available space, pushing the footer down. */
-.grid-container {
-    flex: 1; 
-}
-
 /* --- HEADER SETTINGS --- */
 header {
     /* This makes the header stay at the top of the screen */
@@ -56,9 +50,7 @@ header {
    so it doesn't hide behind the fixed header */
 .header-spacer {
     display: block;
-    /* On mobile, your header + nav is TALLER. 
-       Adjust this number until your 'Main Content' is fully visible. */
- 
+    height: 180px;
 }
 
 /* --- DESKTOP ADJUSTMENTS --- */
@@ -97,7 +89,6 @@ header {
         padding: 15px 30px;
     }
 }
-}
 
 
 
@@ -107,7 +98,7 @@ header {
 main {
     flex: 1;
     max-width: 1200px;
-    margin-top: 400px; 
+    margin: 0 auto;
     padding: 20px;
 }
 

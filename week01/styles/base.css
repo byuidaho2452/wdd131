@@ -15,7 +15,11 @@ body {
     min-height: 100vh;
 }
 
-
+/* This tells the main content area to grow and take up 
+   all available space, pushing the footer down. */
+.grid-container {
+    flex: 1; 
+}
 
 /* --- HEADER SETTINGS --- */
 header {
@@ -38,6 +42,14 @@ header {
     background-color: #333; /* Ensure background */
 }
 
+.profile-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+}
+
 .course-title {
     color: white;
     font-size: 1.2rem;
@@ -52,9 +64,7 @@ header {
    so it doesn't hide behind the fixed header */
 .header-spacer {
     display: block;
-    /* On mobile, your header + nav is TALLER. 
-       Adjust this number until your 'Main Content' is fully visible. */
- 
+    height: 180px;
 }
 
 /* --- DESKTOP ADJUSTMENTS --- */
@@ -117,12 +127,10 @@ main h1 {
 }
 
 /* --- THE GRID & CARDS --- */
-/* Combine all properties for .grid-container into this one block */
 .grid-container {
-    display: grid;         /* From your original grid setup */
-    grid-template-columns: 1fr; 
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 20px;
-    flex: 1;              /* From your recent update to push the footer down */
 }
 
 /* Specific styling for the 'card' class required by audit */

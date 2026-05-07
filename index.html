@@ -10,35 +10,54 @@
     
     <meta name="author" content="Nwaigwe Okechukwu Augustine">
     
-    <link rel="icon" href="week01/images/icon.png" type="image/png">
-    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="icon" href="images/icon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css">
     <script src="scripts/getdates.js" defer></script>
-    <style>
-        body { font-family: sans-serif; padding: 2rem; line-height: 1.6; }
-        h1 { border-bottom: 2px solid #333; }
-        ul { margin-top: 1rem; }
-        li { margin-bottom: 0.5rem; }
-    </style>
 </head>
 <body>
 
     <header>
-        <h1>WDD 131: Dynamic Web Fundamentals</h1>
-        <p>Nwaigwe Okechukwu Augustine | BYU-Idaho</p>
+        <div class="header-top">
+            <div class="course-title"><span id="course-title">WDD 131: Dynamic Web Fundamentals</span></div>
+            <p>Nwaigwe Okechukwu Augustine | BYU-Idaho</p>
+        </div>
+        <nav>
+            <ul class="navigation">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">W1</a></li>
+                <li><a href="#">W2</a></li>
+                <li><a href="#">W3</a></li>
+            </ul>
+        </nav>
     </header>
+    <div class="header-spacer"></div>
 
     <main>
+        <h1>Nwaigwe Okechukwu Augustine</h1>
         <h2>Assignment Portal</h2>
         <ul>
-            <li>
-                <a href="week01/basic-layout.html">W01: HTML and CSS Layout Review</a>
-            </li>
-            
-            </ul>
+            <li><a href="week01/basic-layout.html">W01: HTML and CSS Layout Review</a></li>
+            <li><a href="#">W02: Typography and Color</a></li>
+            <li><a href="#">W03: Responsive Design</a></li>
+        </ul>
+        <div class="grid-container">
+            <section class="content-box card">
+                <h2>About this page</h2>
+                <p>This homepage helps you navigate weekly WDD 131 assignments and demonstrates the required page structure.</p>
+            </section>
+            <section class="sidebar-box card">
+                <h2>Next steps</h2>
+                <p>Validate your HTML/CSS, update content for each week, and keep your files in the required folders.</p>
+            </section>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 | Course Work Portfolio</p>
+        <p>&copy; 2001 - <span id="currentyear"></span></p>
+        <p>Last Modified: <span id="lastModified"></span></p>
     </footer>
 
 </body>
