@@ -54,8 +54,22 @@ header {
 /* --- THE SPACER --- */
 /* Because the header is 'fixed', it floats above the page. 
    We need this spacer so our main content doesn't start underneath it. */
+/* --- THE SPACER --- */
+/* This is the 'ghost' element that pushes your content down 
+   so it doesn't hide behind the fixed header */
 .header-spacer {
-    height: 140px; /* Adjust this to match your header's height */
+    display: block;
+    /* On mobile, your header + nav is TALLER. 
+       Adjust this number until your 'Main Content' is fully visible. */
+    height: 360px; 
+}
+
+/* --- DESKTOP ADJUSTMENTS --- */
+@media (min-width: 600px) {
+    .header-spacer {
+        /* On desktop, the nav is a single row, so the header is SHORTER. */
+        height: 130px; 
+    }
 }
 
 /* --- NAVIGATION MENU --- */
