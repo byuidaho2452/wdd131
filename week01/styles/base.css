@@ -8,13 +8,11 @@
 
 /* Update your existing body tag */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif; /* Uses Google Font first, falls back to Arial */
     line-height: 1.5;
-    
-    /* These three lines ensure the footer stays at the bottom */
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Stands for 100% of the Viewport Height */
+    min-height: 100vh;
 }
 
 /* This tells the main content area to grow and take up 
@@ -61,7 +59,7 @@ header {
     display: block;
     /* On mobile, your header + nav is TALLER. 
        Adjust this number until your 'Main Content' is fully visible. */
-    height: 360px; 
+ 
 }
 
 /* --- DESKTOP ADJUSTMENTS --- */
@@ -102,7 +100,7 @@ header {
     }
     
     .header-spacer {
-        height: 120px; /* Header is usually shorter on desktop */
+        height: 100px; /* Header is usually shorter on desktop */
     }
 }
 
@@ -110,51 +108,92 @@ header {
 
 
 
-/* --- THE GRID WRAPPER --- */
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr; /* On mobile, everything takes 100% width */
-    gap: 20px; /* Space between the main and aside boxes */
-    padding: 20px;
+/* --- MAIN CONTENT STYLING --- */
+main {
+    flex: 1;
     max-width: 1200px;
-    margin: 0 auto; /* Centers the whole container on big screens */
+    margin-top: 400px; 
+    padding: 20px;
 }
 
-/* --- BOX STYLING --- */
+/* The audit wants a single H1 in main */
+main h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 2px solid #d3d3d3;
+    padding-bottom: 10px;
+}
+
+/* --- THE GRID & CARDS --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Specific styling for the 'card' class required by audit */
+.card {
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+}
+
+/* --- FIX: ADDING THE REQUIRED HOVER EFFECT --- */
+.card:hover {
+    transform: translateY(-5px); /* Slightly lifts the card */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-color: #333;
+}
+
 .content-box {
-    background-color: #d3d3d3; /* Light grey like your screenshot */
+    background-color: #d3d3d3;
     padding: 2rem;
     min-height: 300px;
 }
 
 .sidebar-box {
-    background-color: #fff; /* White like your screenshot */
+    background-color: #fff;
     padding: 2rem;
-    border: 1px solid #ddd;
 }
 
-/* --- DESKTOP GRID (The 'Holy Grail' look) --- */
+/* --- DESKTOP SETTINGS (Screens wider than 768px) --- */
+@media (min-width: 768px) {
+    main {
+        /* On desktop, the header is much shorter, 
+           so we reduce the margin significantly. */
+        margin-top: 150px; 
+    }
+}
+
+/* --- DESKTOP GRID --- */
 @media (min-width: 768px) {
     .grid-container {
-        /* This creates two columns: 
-           The Main takes 3 parts of space, the Aside takes 1 part. */
         grid-template-columns: 3fr 1fr; 
     }
 }
 
-
-
-
-/* --- FOOTER STYLING --- */
-footer {
-    background-color: #222; /* Matches the header color */
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    margin-top: 20px; /* Pushes away from the content boxes */
+/* --- NAVIGATION HOVER (Good for UX) --- */
+.navigation li a:hover {
+    background-color: #444;
+    color: #ffeb3b; /* A subtle yellow highlight */
+    text-decoration: underline;
 }
 
+/* Keep your existing Header and Footer styles below this... */
+
+
+footer {
+    background-color: #222; 
+    color: #ffffff; /* Change this to white for high contrast */
+    text-align: center;
+    padding: 2rem;
+    margin-top: 20px;
+}
+
+/* Ensure the year and last modified text are also white */
 footer p {
+    color: #ffffff;
     font-size: 0.9rem;
     letter-spacing: 1px;
 }

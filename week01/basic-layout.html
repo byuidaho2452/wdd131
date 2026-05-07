@@ -11,14 +11,17 @@
     <meta name="author" content="Nwaigwe Okechukwu Augustine">
     
     <link rel="icon" href="images/icon.png" type="image/png">
-    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/base.css">
     <script src="scripts/getdates.js" defer></script>
-</head>
+</head>.
 <body>
     <header>
     <div class="header-top">
         <img src="images/profile.jpg" alt="Augustine's Profile" class="profile-img">
-        <h1>WDD 131: Nwaigwe Okechukwu Augustine</h1>
+        <h1><span id="course-title">WDD 131: Dynamic Web Fundamentals</span> - Nwaigwe Okechukwu Augustine</h1>
     </div>
 
     <nav>
@@ -31,18 +34,21 @@
     </nav>
 </header>
 
-<div class="header-spacer"></div>
-    <div class="grid-container">
-    <main class="content-box">
-        <h2>Main Content</h2>
-        <p>This is where your primary information goes. In the layout, this area is the largest.</p>
-    </main>
+<main>
+    <h1>Nwaigwe Okechukwu Augustine</h1>
 
-    <aside class="sidebar-box">
-        <h2>Aside Content</h2>
-        <p>This is for extra info, links, or a quick bio.</p>
-    </aside>
-</div>
+    <div class="grid-container">
+        <section class="content-box card">
+            <h2>Main Content</h2>
+            <p>This is where your primary information goes. In the layout, this area is the largest.</p>
+        </section>
+
+        <section class="sidebar-box card">
+            <h2>Aside Content</h2>
+            <p>This is for extra info, links, or a quick bio.</p>
+        </section>
+    </div>
+</main>
 
 <footer>
     <p>&copy; 2001 - <span id="currentyear"></span></p>
