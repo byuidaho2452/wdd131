@@ -15,11 +15,7 @@ body {
     min-height: 100vh;
 }
 
-/* This tells the main content area to grow and take up 
-   all available space, pushing the footer down. */
-.grid-container {
-    flex: 1; 
-}
+
 
 /* --- HEADER SETTINGS --- */
 header {
@@ -97,7 +93,7 @@ header {
         padding: 15px 30px;
     }
 }
-}
+
 
 
 
@@ -121,10 +117,12 @@ main h1 {
 }
 
 /* --- THE GRID & CARDS --- */
+/* Combine all properties for .grid-container into this one block */
 .grid-container {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: grid;         /* From your original grid setup */
+    grid-template-columns: 1fr; 
     gap: 20px;
+    flex: 1;              /* From your recent update to push the footer down */
 }
 
 /* Specific styling for the 'card' class required by audit */
