@@ -1,0 +1,13 @@
+/* --- Large Viewport Styles (The Media Query) --- */
+/* --- Large Viewport Styles (The Media Query) --- */
+@media (min-width: 600px) {
+    #menu {
+        display: none; /* Hide hamburger on desktop */
+    }
+
+    .navigation {
+        display: flex; /* Always show menu on large screens */
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}

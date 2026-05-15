@@ -1,0 +1,53 @@
+/* --- Basic Mobile Styles --- */
+/* Default state: Show the hamburger icon */
+#menu::before {
+    content: "≡";
+}
+
+/* Open state: When JS toggles the .show class, change the icon to X */
+#menu.show::before {
+    content: "X";
+}
+
+/* Optional: Add a smooth transition or styling */
+#menu {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    transition: all 0.3s ease; /* Makes the change feel smoother */
+}
+
+/* Hide navigation by default on mobile */
+.navigation {
+    display: none;
+    flex-direction: column;
+    list-style: none;
+}
+
+/* When JS adds the .show class, the menu appears */
+.navigation.show {
+    display: flex;
+}
+
+/* Wayfinding: Highlight the active page */
+.navigation a.active {
+    background-color: rgba(0,0,0,0.1);
+    font-weight: bold;
+}
+
+
+/* --- Large Viewport Styles (The Media Query) --- */
+@media (min-width: 600px) {
+    #menu {
+        display: none; /* Hide hamburger on desktop */
+    }
+
+    .navigation {
+        display: flex; /* Always show menu on large screens */
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RedmanFinance | Dashboard</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background: #f4f4f4; }
+        .dashboard { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        #user-bio { border: 1px solid #ddd; padding: 10px; background: #fffde7; margin-top: 10px; }
+        .danger-zone { margin-top: 20px; border: 2px solid red; padding: 10px; }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <h1>RedmanFinance Dashboard</h1>
+        <p>Welcome back, <strong>User_123</strong></p>
+        
+        <h3>Your Account Bio:</h3>
+        <div id="user-bio">
+            </div>
+    </div>
+
+    <div class="danger-zone">
+        <h3>Simulate Database Input</h3>
+        <p>Imagine a hacker saved this in their profile settings:</p>
+        <textarea id="hacker-input" rows="4" cols="50"><img src=x onerror="alert('SECURITY BREACH: Your session cookie has been sent to hacker-server.com!')"></textarea>
+        <br>
+        <button id="attack-btn">Update Profile (Vulnerable)</button>
+        <button id="secure-btn">Update Profile (Secure)</button>
+    </div>
+
+    <script src="redman.js"></script>
+</body>
+</html>
